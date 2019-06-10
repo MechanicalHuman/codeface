@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2015  Andrew Kensler, modifications Copyright 2015 Christopher Simpkins
+# Copyright (c) 2015  Andrew Kensler, modifications Copyright 2017 Christopher Simpkins
 #
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -38,7 +38,7 @@ import cairo
 import pango
 import pangocairo
 
-RESOLUTION = 216
+RESOLUTION = 144
 
 # Basic argument parsing
 

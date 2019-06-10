@@ -1,14 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# =========================================
+# image_generator.py
+# Copyright 2017 Christopher Simpkins
+# MIT License
+# =========================================
+
 import sys
 import subprocess
 
 # master font list (all fonts in gallery)
-# from utilities.fonts import font_list
+from utilities.fonts import font_list
 
 # single fonts for font additions
-from utilities.font import font_list
+# from utilities.font import font_list
 
 for font in font_list:
     font_name = font[0]
@@ -16,16 +22,16 @@ for font in font_list:
     font_filename = font[1]['filename']
 
     # create test pattern command
-    tp_command = """python render.py -t specimens/test-pattern.txt -l text -x 2175 -b "#fcfdffff" -i ../images/gallery/""" + font_filename + """-STP.png -f '""" + font_name + """' -p 20"""
+    tp_command = """python render.py -t specimens/test-pattern.txt -l text -x 725 -b "#fcfdffff" -i ../images/gallery/""" + font_filename + """-STP.png -f '""" + font_name + """' -p 20"""
 
     # create compact test pattern command
-    tpc_command = """python render.py -t specimens/test-pattern-compact.txt -l text -x 2175 -b "#fcfdffff" -i ../images/gallery/""" + font_filename + """-STPC.png -f '""" + font_name + """' -p 20"""
+    tpc_command = """python render.py -t specimens/test-pattern-compact.txt -l text -x 725 -b "#fcfdffff" -i ../images/gallery/""" + font_filename + """-STPC.png -f '""" + font_name + """' -p 20"""
 
     # create dark syntax higlighter command
-    dh_command = """python render_highlight.py -t specimen/samplecode.c -x 2175 -i ../images/gallery/""" + font_filename + """-dark.png -f '""" + font_name + """' -p 20 --style dark"""
+    dh_command = """python render_highlight.py -t specimen/samplecode.c -x 725 -i ../images/gallery/""" + font_filename + """-dark.png -f '""" + font_name + """' -p 20 --style dark"""
 
     # create light syntax highlighter command
-    lh_command = """python render_highlight.py -t specimen/samplecode.c -x 2175 -i ../images/gallery/""" + font_filename + """-light.png -f '""" + font_name + """' -p 20 --style light"""
+    lh_command = """python render_highlight.py -t specimen/samplecode.c -x 725 -i ../images/gallery/""" + font_filename + """-light.png -f '""" + font_name + """' -p 20 --style light"""
 
 
     exit_code_tp = subprocess.call(tp_command, shell=True)
